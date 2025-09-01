@@ -1,0 +1,13 @@
+[project]
+name = "miifachi-v2"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "aiohttp",
+    "aiosqlite",
+    "cogwatch>=3.3.1",
+    "discord.py==2.5.2",
+    "python-dotenv",
+]
