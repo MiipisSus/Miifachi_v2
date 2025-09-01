@@ -8,6 +8,6 @@ dependencies = [
     "aiohttp",
     "aiosqlite",
     "cogwatch>=3.3.1",
-    "discord.py==2.5.2",
+    "py-cord>=2.6.1",
     "python-dotenv",
 ]

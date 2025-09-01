@@ -1,5 +1,5 @@
 """
-Discord Views 和 UI 元件
+Discord Views 和 UI 元件 (py-cord 版本)
 """
 
 import discord
@@ -14,12 +14,12 @@ class ConfirmView(discord.ui.View):
         self.value = None
 
     @discord.ui.button(label='確認', style=discord.ButtonStyle.green)
-    async def confirm(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def confirm(self, button: discord.ui.Button, interaction: discord.Interaction):
         self.value = True
         self.stop()
 
     @discord.ui.button(label='取消', style=discord.ButtonStyle.red)
-    async def cancel(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def cancel(self, button: discord.ui.Button, interaction: discord.Interaction):
         self.value = False
         self.stop()
 
@@ -32,12 +32,12 @@ class CoinFlipView(discord.ui.View):
         self.value = None
 
     @discord.ui.button(label="正面", style=discord.ButtonStyle.blurple)
-    async def heads(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def heads(self, button: discord.ui.Button, interaction: discord.Interaction):
         self.value = "heads"
         self.stop()
 
     @discord.ui.button(label="反面", style=discord.ButtonStyle.blurple)
-    async def tails(self, interaction: discord.Interaction, button: discord.ui.Button):
+    async def tails(self, button: discord.ui.Button, interaction: discord.Interaction):
         self.value = "tails"
         self.stop()
 

@@ -1,6 +1,17 @@
 """
-Discord Embed 元件
+Discord Embed 元件 (py-cord 版本)
 """
+
+import discord
+
+ 
+def create_warning_embed(title: str, description: str) -> discord.Embed:
+    """建立警告訊息的 embed"""
+    return discord.Embed(
+        title=title,
+        description=description,
+        color=0xF59E42
+    )
 from datetime import datetime
 
 import discord
