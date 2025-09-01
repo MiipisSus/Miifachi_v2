@@ -18,6 +18,7 @@ import discord
 from discord.ext import commands, tasks
 from discord.ext.commands import Context
 from dotenv import load_dotenv
+from cogwatch import watch
 
 from database import DatabaseManager
 
@@ -55,8 +56,8 @@ intents.members = True
 intents.message_content = True
 intents.presences = True
 """
-
-intents = discord.Intents.default()
+if __debug__:
+    intents = discord.Intents.default()
 
 """
 Uncomment this if you want to use prefix (normal) commands.
@@ -64,7 +65,7 @@ It is recommended to use slash commands and therefore not use prefix commands.
 
 If you want to use prefix commands, make sure to also enable the intent below in the Discord developer portal.
 """
-# intents.message_content = True
+intents.message_content = True
 
 # Setup both of the loggers
 
@@ -200,6 +201,10 @@ class DiscordBot(commands.Bot):
             )
         )
 
+    @watch(path='cogs', preload=True)
+    async def on_ready(self):
+        pass
+        
     async def on_message(self, message: discord.Message) -> None:
         """
         The code in this event is executed every time someone sends a message, with or without the prefix
